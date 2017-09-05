@@ -11,28 +11,22 @@ _Ruby application that determines valid finds the angle between the hands of a c
 ## Setup/Installation Requirements
 
 * _Clone application from github repository: https://github.com/langlk/clock_angle.git_
-* _From this repository run queen_attack.rb_
+* _From this repository run clock_angle.rb_
 
 ## Specifications
 
-* _Returns false if the coordinates are not horizontally, vertically, or diagonally in line with each other._
-  * Example input: [1,1], [2,3]
-  * Example output: false
-* _Returns true if the coordinates are horizontally in line with each other_
-  * Example input: [4,1], [6,1]
-  * Example output: true
-* _Returns true if the coordinates are vertically in line with each other_
-  * Example input: [4,1], [4,6]
-  * Example output: true
-* _Returns true if the coordinates are diagonally in line with each other_
-  * Example input: [2,2], [3,1]
-  * Example output: true
-  * Example input: [2,2], [1,1]
-  * Example output: true
-  * Example input: [2,2], [3,3]
-  * Example output: true
-  * Example input: [2,2], [1,3]
-  * Example output: true
+* _Returns 0 degrees if the two hands overlap exactly._
+  * Example input: 12:00
+  * Example output: 0
+* _If the time is precisely on the hour, returns the hour's angle from 12 o'clock in degrees_
+  * Example input: 3:00
+  * Example output: 90
+* _If the minute amount is non-zero, return the hour's angle from 12 o'clock minus the minute's angle from 12 o'clock in degrees._
+  * Example input: 12:30
+  * Example output: 165
+* _If the resulting angle is greater than 180 degrees, return 360 - result_
+  * Example input: 9:00
+  * Example output: 90
 
 ## Known Bugs
 
