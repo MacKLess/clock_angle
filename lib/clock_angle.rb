@@ -5,6 +5,14 @@ class CustomTime
   end
 
   def clock_angle()
-    return 0
+    if @minutes == 0
+      angle = @hour * 30
+      if angle > 180
+        angle = 360 - angle
+      end
+      return angle
+    else
+      return 0
+    end
   end
 end
