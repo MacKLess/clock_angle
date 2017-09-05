@@ -16,4 +16,9 @@ describe("#clock_angle") do
     time_test = CustomTime.new(12,30)
     expect(time_test.clock_angle()).to(eq(165))
   end
+
+  it("if the resulting angle is greater than 180 degrees, return 360 - result") do
+    time_test = CustomTime.new(9,0)
+    expect(time_test.clock_angle()).to(eq(90))
+  end
 end
